@@ -22,5 +22,5 @@ function fizzBuzz(num) {
 }
 
 
-console.log(fizzBuzz(5), '5 -> 1, 2, Fizz, 4, Buzz.')
-console.log(fizzBuzz(15), '15 -> 1, 2, Fizz, 4, Buzz, Fizz, 7 8 Flzz Buzz 11 Fizz 13 14 Fizz Buzz')
+fizzBuzz(5) // '5 -> 1, 2, Fizz, 4, Buzz.')
+fizzBuzz(15) //'15 -> 1, 2, Fizz, 4, Buzz, Fizz, 7 8 Flzz Buzz 11 Fizz 13 14 Fizz Buzz'
