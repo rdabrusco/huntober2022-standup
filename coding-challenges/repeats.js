@@ -14,6 +14,7 @@
 
 // function repeats(arr){
 //   // filter all numbers out that happen twice
+    // index of num === last index of num
 //   const filteredArray = arr.filter((el, i) => !arr.includes(el, arr.indexOf(el)+1))
 //   // add nums together
 //   const sum = filteredArray.reduce((a, c) => a += c, 0)
@@ -26,7 +27,7 @@
 //   return arr.filter((el, i) => !arr.includes(el, arr.indexOf(el)+1)).reduce((a, c) => a += c, 0)
 // }
 
-const repeats = arr => arr.filter((el, i) => !arr.includes(el, arr.indexOf(el)+1)).reduce((a, c) => a += c, 0)
+const repeats = arr => arr.filter((el, i) => arr.indexOf(el) === arr.lastIndexOf(el) ).reduce((a, c) => a += c, 0)
 
 
 
