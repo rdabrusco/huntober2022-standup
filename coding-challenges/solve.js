@@ -26,7 +26,10 @@
 //   return arr.map(a => new Set(a)).reduce((a, c) => a * c.size, 1)
 // }
 
-const solve = arr => arr.map(a => new Set(a)).reduce((a, c)=> a * c.size, 1)
+const solve = arr => arr.map(a => new Set(a).size).reduce((a, c)=> a * c, 1)
+
+// const solve = arr => arr.reduce((a, c)=> a * new Set(c).size, 1)
+
 
 
 console.log(solve([[1, 2], [4], [5, 6]]), 4)
