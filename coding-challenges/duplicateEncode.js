@@ -42,7 +42,7 @@
 //   return str.toLowerCase().split('').map(c => str.indexOf(c) === str.lastIndexOf(c) ? '(' : ')' ).join('')
 // }
 
-const duplicateEncode = str => str.toLowerCase().split('').map(c => str.indexOf(c) === str.lastIndexOf(c) ? '(' : ')' ).join('')
+const duplicateEncode = str => str.toLowerCase().split('').map((c,i,a) => a.indexOf(c) === a.lastIndexOf(c) ? '(' : ')' ).join('')
 
 console.log(duplicateEncode('app'), '())')
 console.log(duplicateEncode('stun'), '((((')
