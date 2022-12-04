@@ -44,15 +44,17 @@
 // }
 
 
-function transform(str){
-    // str -> split " " -> reverse -> join " "
-    const reversedString = str.split(" ").reverse().join(" ")
+// function transform(str){
+//     // str -> split " " -> reverse -> join " "
+//     const reversedString = str.split(" ").reverse().join(" ")
   
-    // str split "" -> map l === l.lowercase() ? l.toUpperCase : l.toLowerCase()
-    const transformedStr = reversedString.split("").map(l => l === l.toUpperCase() ? l.toLowerCase() : l.toUpperCase()).join("")
-    return transformedStr
-  }
+//     // str split "" -> map l === l.lowercase() ? l.toUpperCase : l.toLowerCase()
+//     const transformedStr = reversedString.split("").map(l => l === l.toUpperCase() ? l.toLowerCase() : l.toUpperCase()).join("")
+//     return transformedStr
+//   }
   
+const transform = str => str.split(' ').reverse().join(' ').split('').map(l => l === l.toUpperCase() ? l.toLowerCase() : l.toUpperCase()).join("")
+
   console.log(transform('Hello World'), '-->wORLD hELLO')
   console.log(transform('Eat tHe beEf '), '-->BEeF ThE eAT')
   console.log(transform('Sup  dude '), '-->DUDE sUP')
