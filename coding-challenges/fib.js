@@ -26,49 +26,82 @@
 
 // return value of F(n)  as a num
 
+//Bottom-Up approach
+// function fib(n){
 
-function fib(n){
+//     //create fib sequence to n length
+//     let sequence = [0,1]
+//     //loop n times
+//     for(let i = 2; i <= n; i++){
+//     // sum last 2 nums of sequence, and push to sequence arr
+//       const nextNum = sequence[sequence.length-1] + sequence[sequence.length-2]
+//       sequence.push(nextNum)
+      
+//     }
+    
+//     // return last num of arr
+//     return sequence[sequence.length-1]
+//   }
 
-    //create fib sequence to n length
-    let sequence = [0,1]
-    //loop n times
-    for(let i = 2; i <= n; i++){
-    // sum last 2 nums of sequence, and push to sequence arr
-      const nextNum = sequence[sequence.length-1] + sequence[sequence.length-2]
-      sequence.push(nextNum)
-      
-    }
-    
-    // return last num of arr
-    return sequence[sequence.length-1]
-  }
-  function fib(n){
+//Bottom-Up approach
+
+//   function fib(n){
   
-    //create fib sequence to n length
-    let arr = [0,1]
-    //loop n times
-    for(let i = 2; i <= n; i++){
-    // sum last 2 nums of sequence, and push to sequence arr
-      arr[i] = arr[i-1] + arr[i-2]
+//     //create fib sequence to n length
+//     let arr = [0,1]
+//     //loop n times
+//     for(let i = 2; i <= n; i++){
+//     // sum last 2 nums of sequence, and push to sequence arr
+//       arr[i] = arr[i-1] + arr[i-2]
       
-    }
+//     }
     
-    // return last num of arr
-    return arr[n]
-  }
-  function fib(n){
+//     // return last num of arr
+//     return arr[n]
+//   }
+
+
+  // function fib(n){
   
-    let arr = [0,1]
-    for(let i = 2; i <= n; i++){
-      arr[i] = arr[i-1] + arr[i-2]
+  //   let arr = [0,1]
+  //   for(let i = 2; i <= n; i++){
+  //     arr[i] = arr[i-1] + arr[i-2]
       
-    }
+  //   }
     
-    return arr[n]
+  //   return arr[n]
+  // }
+
+
+  // DONT USE THIS ONE BUT ITS SIMPLE RECURSIVE
+  // function fib(n){
+  //   if(n<2){return n}
+  //   return fib(n-1) + fib(n-2)
+  // }
+
+
+  // MEMOIZATION
+  let memo = {}
+
+  function fib(n){
+
+    if(n === 0 || n === 1){
+        return n
+    }else if(memo[n]){
+        return memo[n]
+    }else{
+        let result = fib(n-1) + fib(n-2)
+        memo[n] = result
+        return result
+    }
   }
+
+
   console.log(fib(2), `--> 1`)
   console.log(fib(5), `--> 5`)
   console.log(fib(3), `--> 2`)
   console.log(fib(4), `--> 3`)
+  console.log(fib(50))
+
   
   
